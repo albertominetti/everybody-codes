@@ -1,0 +1,3 @@
+Jorathural,Zalnix,Joratharis,Laziral,Voraxophis,Kalpyr,Mavzion,Seldin,Irynindor,Cragaxar,Paldnix,Axalnar,Luthzal,Tarlgnaris,Fyndidris,Elvarjoris,Cynvaror,Dorvash,Xarzion,Tordaros,Ignural,Vanasis,Tazcoryx,Ascalthyn,Wynaris,Axalmir,Fenoryx,Vangalor,Olarzrak,Vaelpyr
+
+L18,R28,L24,R40,L47,R39,L26,R19,L41,R10,L17,R9,L40,R21,L8,R20,L17,R23,L32,R35,L5,R48,L5,R14,L5,R49,L5,R34,L5,R9,L5,R23,L5,R47,L5,R8,L5,R30,L5,R40,L19,R14,L11,R9,L13,R49,L35,R47,L26,R36,L39,R43,L43,R14,L34,R43,L49,R14,L37
