@@ -97,7 +97,7 @@ def decrypt(input_hex, key):
 current_time = datetime.datetime.now(pytz.timezone('Europe/Zurich'))
 print("Time is " + current_time.strftime("%Y-%m-%d %H:%M:%S"))
 year = current_time.year
-day = current_time.day - 1  # started on November Tuesday, the 4th
+day = current_time.day - 4  # started on November Tuesday, the 4th
 
 
 year_dir = Path(str(year))
