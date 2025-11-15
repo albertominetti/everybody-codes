@@ -3,3 +3,4 @@ cryptography
 tqdm
 urllib3
 requests
+functools

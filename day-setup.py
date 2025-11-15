@@ -94,7 +94,7 @@ current_time = datetime.datetime.now(pytz.timezone('Europe/Zurich'))
 
 year = current_time.year
 day = current_time.day - 3  # started on November Tuesday, the 4th
-day = 3  # adjust to select the proper day, if doing not the same day
+day = 4  # adjust to select the proper day, if doing not the same day
 
 year_dir = Path(str(year))
 year_dir.mkdir(parents=True, exist_ok=True)
@@ -113,9 +113,9 @@ for i in [1,2,3]:
     key = f"key{i}"
     if key in keys:
         content = decrypt(inputs[str(i)], keys[key])
-        test_path = day_dir / "test-input-{:02d}-{:02d}.txt".format(day, i)
-        if test_path.exists():
+        input_file_path = day_dir / "input-{:02d}-{:02d}.txt".format(day, i)
+        if input_file_path.exists():
             continue
-        test_path.touch(exist_ok=True)
-        test_path.write_text(content)
+        input_file_path.touch(exist_ok=True)
+        input_file_path.write_text(content)
 
