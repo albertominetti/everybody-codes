@@ -94,7 +94,7 @@ current_time = datetime.datetime.now(pytz.timezone('Europe/Zurich'))
 
 year = current_time.year
 day = current_time.day - 3  # started on November Tuesday, the 4th
-day = 5  # adjust to select the proper day, if doing not the same day
+day = 6  # adjust to select the proper day, if doing not the same day
 
 year_dir = Path(str(year))
 year_dir.mkdir(parents=True, exist_ok=True)
@@ -102,10 +102,13 @@ day_dir = year_dir /"day-{:02d}".format(day)
 day_dir.mkdir(parents=True, exist_ok=True)
 
 
-day_code_dir = day_dir /"day-{:02d}.py".format(day)
+day_code_file = day_dir / "day-{:02d}.py".format(day)
 
-if not day_code_dir.exists():
-    day_code_dir.touch(exist_ok=True)
+if not day_code_file.exists():
+    day_code_file.touch(exist_ok=True)
+    day_template_file = Path("day-XX.py")
+    content = day_template_file.read_text()
+    day_code_file.write_text(content)
 
 inputs = get_enc_inputs(year, day, get_seed())
 keys = get_keys(year, day)
