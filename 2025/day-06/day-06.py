@@ -38,10 +38,31 @@ def part2():
 def part3():
     with open("input-06-03.txt") as input_file:
         content = input_file.read()
-    print(content) 
+
+    s = content * 1000
+
+    prefix = {ch: [0] * (len(s) + 1) for ch in 'ABC'}
+
+    for i, ch in tqdm.tqdm(enumerate(s)):
+        for key in 'ABC':
+            prefix[key][i + 1] = prefix[key][i] + (1 if ch == key else 0)
+
+    result = {'a': [], 'b': [], 'c': []}
+
+    for i, ch in tqdm.tqdm(enumerate(s)):
+        if ch in result:
+            upper = ch.upper()
+            start = max(0, i - 1000)
+            end = min(len(s) - 1, i + 1000)
+            count = prefix[upper][end + 1] - prefix[upper][start]
+            result[ch].append(count)
+
+    total = sum(sum(lst) for lst in result.values())
+    print(total)
+    
 
 
 if __name__ == "__main__":
     # part1()
-    part2()
-    # part3()
+    # part2()
+    part3()
