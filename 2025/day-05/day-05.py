@@ -5,7 +5,7 @@ os.chdir(script_dir)
 
 
 def part1():
-    with open("input-XX-01.txt") as input_file:
+    with open("input-05-01.txt") as input_file:
         content = input_file.read()
     print(content) 
 
@@ -13,14 +13,14 @@ def part1():
 
 
 def part2():
-    with open("input-XX-03.txt") as input_file:
+    with open("input-05-03.txt") as input_file:
         content = input_file.read()
     print(content) 
     
     
     
 def part3():
-    with open("input-XX-03.txt") as input_file:
+    with open("input-05-03.txt") as input_file:
         content = input_file.read()
     print(content) 
 
