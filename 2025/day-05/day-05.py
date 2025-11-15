@@ -49,10 +49,24 @@ def part1():
 
 
 def part2():
-    with open("input-05-03.txt") as input_file:
-        content = input_file.read()
-    print(content) 
+    swords = {}
+    with open("input-05-02.txt") as input_file:
+        line = input_file.readline()
+        while line:
+            sword, numbers = line.split(":")
+            numbers = list(map(int, numbers.split(",")))
+            swords[sword] = numbers
+            line = input_file.readline()
+        
+    qualities = {}
+    for s in swords:
+        numbers = swords[s]
+        result = Node(numbers[0])
+        for n in numbers[1:]:
+            result.add(n)
+        qualities[s] = int("".join(map(str, result.spine())))
     
+    print(max(qualities.values()) - min(qualities.values()))
     
     
 def part3():
@@ -62,6 +76,6 @@ def part3():
 
 
 if __name__ == "__main__":
-    part1()
-    # part2()
+    # part1()
+    part2()
     # part3()

@@ -13,7 +13,7 @@ def part1():
 
 
 def part2():
-    with open("input-XX-03.txt") as input_file:
+    with open("input-XX-02.txt") as input_file:
         content = input_file.read()
     print(content) 
     
