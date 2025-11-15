@@ -4,9 +4,12 @@ Solutions in Python for the Everybody Codes challenges
 
 ## Challenge
 
+[Everybody Codes](https://everybody.codes/)
+
 It takes place in November and it is very similar to the Advent of Code.
 
-[Everybody Codes](https://everybody.codes/)
+It counts the time since the moment that the developer opens his quest, and I prefer this behavior.
+
 
 ## Goals
 

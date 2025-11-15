@@ -17,7 +17,6 @@ log = logging.getLogger(__name__)
 config_dir = Path("~/.everybody.codes/").expanduser()
 config_dir.mkdir(parents=True, exist_ok=True)
 
-
 url_post = "https://everybody.codes/api/event/{event}/quest/{quest}/part/{part}/answer"
 
 @cache
@@ -52,9 +51,6 @@ def get_seed():
         path.write_text(str(seed))
         log.debug("wrote seed %d to memo %s", seed, path)
     return seed
-
-print(get_token())
-print(get_seed())
 
 def get_enc_inputs(event, story, seed):
     http = get_http()
@@ -95,10 +91,10 @@ def decrypt(input_hex, key):
 
 
 current_time = datetime.datetime.now(pytz.timezone('Europe/Zurich'))
-print("Time is " + current_time.strftime("%Y-%m-%d %H:%M:%S"))
-year = current_time.year
-day = current_time.day - 4  # started on November Tuesday, the 4th
 
+year = current_time.year
+day = current_time.day - 3  # started on November Tuesday, the 4th
+# day = 3  # adjust to select the proper day, if doing not the same day
 
 year_dir = Path(str(year))
 year_dir.mkdir(parents=True, exist_ok=True)
@@ -118,7 +114,8 @@ for i in [1,2,3]:
     if key in keys:
         content = decrypt(inputs[str(i)], keys[key])
         test_path = day_dir / "test-input-{:02d}-{:02d}.txt".format(day, i)
-        print(test_path)
+        if test_path.exists():
+            continue
         test_path.touch(exist_ok=True)
         test_path.write_text(content)
 

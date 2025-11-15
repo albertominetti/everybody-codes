@@ -1,2 +1,5 @@
 pytz
 cryptography
+tqdm
+urllib3
+requests
