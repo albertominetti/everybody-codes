@@ -94,7 +94,7 @@ current_time = datetime.datetime.now(pytz.timezone('Europe/Zurich'))
 
 year = current_time.year
 day = current_time.day - 3  # started on November Tuesday, the 4th
-# day = 3  # adjust to select the proper day, if doing not the same day
+day = 3  # adjust to select the proper day, if doing not the same day
 
 year_dir = Path(str(year))
 year_dir.mkdir(parents=True, exist_ok=True)
