@@ -4,7 +4,7 @@ import sys
 script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
-file = open("input-01-03.txt").read().split("\n")
+file = open("test-input-01-03.txt").read().split("\n")
 
 names = file[0].split(',')
 moves = file[2].split(',')
